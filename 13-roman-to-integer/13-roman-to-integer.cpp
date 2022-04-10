@@ -5,9 +5,8 @@ public:
         char var;
         for(i=0;i<s.length();i++){
             var=s[i];
-            switch(var){
-                case 'I':
-                     if(s[i+1] == 'V' || s[i+1] == 'X'){
+            if(var=='I'){
+                if(s[i+1] == 'V' || s[i+1] == 'X'){
                     if(s[i+1]=='V'){
                     i+=1;
                     sum+=4;
@@ -17,12 +16,12 @@ public:
                     sum+=9;
                 }
                 }
-                else{
-                    sum+=1;
-                    }                
-                    break;
-                case 'X':
-                    if(s[i+1] == 'L' || s[i+1] == 'C'){
+else{
+    sum+=1;
+}                
+            }
+             if(var=='X'){
+                if(s[i+1] == 'L' || s[i+1] == 'C'){
                     if(s[i+1]=='L'){
                     i+=1;
                     sum+=40;
@@ -35,9 +34,9 @@ public:
 else{
     sum+=10;
 }                
-                    break;
-                case 'C':
-                    if(s[i+1] == 'D' || s[i+1] == 'M'){
+            }
+             if(var=='C'){
+                if(s[i+1] == 'D' || s[i+1] == 'M'){
                     if(s[i+1]=='D'){
                     i+=1;
                     sum+=400;
@@ -50,7 +49,8 @@ else{
 else{
     sum+=100;
 }                
-                    break;
+            }
+            switch(var){
                 case 'V':
                     sum+=5;
                     break;
