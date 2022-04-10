@@ -20,7 +20,7 @@ else{
     sum+=1;
 }                
             }
-             else if(var=='X'){
+             if(var=='X'){
                 if(s[i+1] == 'L' || s[i+1] == 'C'){
                     if(s[i+1]=='L'){
                     i+=1;
@@ -35,7 +35,7 @@ else{
     sum+=10;
 }                
             }
-            else if(var=='C'){
+             if(var=='C'){
                 if(s[i+1] == 'D' || s[i+1] == 'M'){
                     if(s[i+1]=='D'){
                     i+=1;
@@ -50,17 +50,19 @@ else{
     sum+=100;
 }                
             }
-            else if(var=='V'){
-                sum+=5;
-            }
-            else if(var=='L'){
-                sum+=50;
-            }
-            else if(var=='D'){
-                sum+=500;
-            }
-            else if(var=='M'){
-                sum+=1000;
+            switch(var){
+                case 'V':
+                    sum+=5;
+                    break;
+                case 'L':
+                    sum+=50;
+                    break;
+                case 'D':
+                    sum+=500;
+                    break;
+                case 'M':
+                    sum+=1000;
+                    break;
             }
         }
         return sum;
