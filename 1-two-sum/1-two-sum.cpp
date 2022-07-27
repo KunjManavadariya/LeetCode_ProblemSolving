@@ -13,7 +13,6 @@ public:
                 }
             
         }
-        
         return vect1;
     }
 };
