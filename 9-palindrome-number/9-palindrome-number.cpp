@@ -12,7 +12,10 @@ public:
                 temp=temp*10+last;
                 x/=10;
             }
-            return (temp == i) ?  1 : 0;
+            if(temp==i){
+                return 1;
+            }
+            return 0;
         }
     }
 };
