@@ -1,6 +1,6 @@
-class Solution:
-   def poorPigs(self, buckets, minutesToDie, minutesToTest):
-    pigs = 0
-    while (minutesToTest / minutesToDie + 1) ** pigs < buckets:
-        pigs += 1
-    return pigs
+class Solution {
+public:
+    int poorPigs(int buckets, int minutesToDie, int minutesToTest){
+        return ceil(log(buckets) / log(minutesToTest / minutesToDie + 1));
+    }
+};
