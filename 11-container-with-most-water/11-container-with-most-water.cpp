@@ -18,15 +18,29 @@ public:
     //     }
     //     return *max_element(vec.begin(), vec.end());
     // }
-    int maxArea(vector<int>& height) {
-    int water = 0;
-    int i = 0, j = height.size() - 1;
-    while (i < j) {
-        int h = min(height[i], height[j]);
-        water = max(water, (j - i) * h);
-        while (height[i] <= h && i < j) i++;
-        while (height[j] <= h && i < j) j--;
-    }
-    return water;
-}
+//     int maxArea(vector<int>& height) {
+//     int water = 0;
+//     int i = 0, j = height.size() - 1;
+//     while (i < j) {
+//         int h = min(height[i], height[j]);
+//         water = max(water, (j - i) * h);
+//         while (height[i] <= h && i < j) i++;
+//         while (height[j] <= h && i < j) j--;
+//     }
+//     return water;
+// }
+    
+     int maxArea(vector<int>& height) {
+        int i=0, j=height.size()-1, calc=0;
+         while(i<j){
+         if(height[i]<height[j]){
+             calc=max(calc, (j-i)*height[i]);
+             i++;
+         }else{
+             calc=max(calc, (j-i)*height[j]);
+             j--;
+         }   
+         }   
+         return calc;
+     }
 };
