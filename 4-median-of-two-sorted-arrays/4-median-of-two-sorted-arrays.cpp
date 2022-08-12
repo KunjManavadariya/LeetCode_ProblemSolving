@@ -16,5 +16,6 @@ public:
             double res=(nums1[mid] + nums1[(mid+1)])/2.0;
             return res;
         }
+        return 0.00;
     }
 };
