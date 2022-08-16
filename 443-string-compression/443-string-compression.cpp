@@ -1,13 +1,14 @@
 class Solution {
 public:
     int compress(vector<char>& chars) {
-        if(chars.size() < 2) return chars.size();
+        int n= chars.size();
+        if(n < 2) return n;
         int count=1;
         string res;
         
-        for(int i=0; i<chars.size(); i++){
+        for(int i=0; i<n; i++){
             res.push_back(chars[i]);
-            while(i<chars.size()-1 && chars[i]==chars[i+1]){
+            while(i<n-1 && chars[i]==chars[i+1]){
                 count++;
                 i++;
             }
