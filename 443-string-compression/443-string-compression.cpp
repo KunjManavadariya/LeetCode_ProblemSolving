@@ -17,7 +17,6 @@ public:
             }
             count=1;
             }
-            cout<<res;
 
         for(int i=0; i<res.size(); i++){
             chars[i]=res[i];
