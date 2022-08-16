@@ -1,14 +1,16 @@
 class Solution {
 public:
     int firstUniqChar(string s) {
-        int freq[26] = {0};
-        for(int i=0; i<s.length(); i++){
-            freq[s[i]-'a']++;
+        int freq[26] = {0}, i=0;
+        while(i<s.length()){
+            freq[s[i++]-'a']++;
         }
-        for(int i=0; i<s.length(); i++){
+        i=0;
+        while(i<s.length()){
             if(freq[s[i]-'a']==1){
                 return i;
             }
+            i++;
         }
         return -1;
     }
