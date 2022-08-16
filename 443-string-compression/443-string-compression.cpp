@@ -4,10 +4,10 @@ public:
         int n= chars.size();
         if(n < 2) return n;
         int count=1;
-        string res;
+        string res="";
         
         for(int i=0; i<n; i++){
-            res.push_back(chars[i]);
+            res+=(chars[i]);
             while(i<n-1 && chars[i]==chars[i+1]){
                 count++;
                 i++;
