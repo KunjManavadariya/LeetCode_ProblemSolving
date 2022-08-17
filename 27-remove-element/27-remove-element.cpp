@@ -9,6 +9,7 @@ public:
             }
             else i++;
         }
-        return n-count;
+        int res=n-count;
+        return res;
     }
 };
