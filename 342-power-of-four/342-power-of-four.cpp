@@ -8,7 +8,7 @@ public:
                     if(i%2!=0) return false;
                 }
                 if(count>1) return false;
-                n>>=1;
+                n=n>>1;
             }
         if(count!=1) return false;
         return true;
