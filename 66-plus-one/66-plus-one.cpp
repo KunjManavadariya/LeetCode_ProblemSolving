@@ -16,7 +16,7 @@ public:
                     return digits;
                 }
             }
-             digits[0]=0;
+            digits[0]=0;
             digits.insert(digits.begin(), 1);
         }
         return digits;
