@@ -1,13 +1,13 @@
 class Solution {
 public:
     vector<int> plusOne(vector<int>& digits) {
-        int n=digits.size();
-        if(digits[n-1]!=9){
-            digits[n-1]++;
+        int n=digits.size()-1;
+        if(digits[n]!=9){
+            digits[n]++;
         }
         else{
-            digits[n-1]=0;
-            for(int i=n-2; i>=0; i--){
+            digits[n]=0;
+            for(int i=n-1; i>=0; i--){
                 if(digits[i]==9 && i-1>=0){
                     digits[i]=0;
                 }
