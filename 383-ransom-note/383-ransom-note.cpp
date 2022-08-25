@@ -6,8 +6,8 @@ public:
             freq[magazine[i]-'a']++;
         }
         for(int i=0; i<ransomNote.size(); i++){
-            if(freq[ransomNote[i]-'a']==0) return false;
-            freq[ransomNote[i]-'a']--;
+            if((freq[ransomNote[i]-'a']--)==0) return false;
+            // freq[ransomNote[i]-'a']--;
         }
         return true;
     }
