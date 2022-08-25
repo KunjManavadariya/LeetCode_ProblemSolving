@@ -9,14 +9,16 @@ public:
         }
         while(num>0){
             if(num<1000){
+                int n=0;
                 for(int i=0; i<13; i++){
                     if(num<val[i]){ 
                         res += letter[i-1];
                         num-=val[i-1];
+                        n=i-2;
                         break;
                     }
                 }
-                for(int i=0; i<13; i++){
+                for(int i=0; i<n; i++){
                     if(num==val[i]){
                         res += letter[i];
                         return res;
