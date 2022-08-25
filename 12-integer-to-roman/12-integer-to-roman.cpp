@@ -8,26 +8,25 @@ public:
             if(num==val[i]) return letter[i];
         }
         while(num>0){
-            if(num<1000){
-                int n=0;
-                for(int i=0; i<13; i++){
-                    if(num<val[i]){ 
-                        res += letter[i-1];
-                        num-=val[i-1];
-                        n=i-2;
-                        break;
-                    }
-                }
-                for(int i=0; i<n; i++){
-                    if(num==val[i]){
-                        res += letter[i];
-                        return res;
-                    }
-                }
+        if(num<1000){
+            int i=0;
+            while(num>0 && i<13){
+                        if(num<val[i]){ 
+                            res += letter[i-1];
+                            num-=val[i-1];
+                            i=-1;
+                        }
+                        else if(num==val[i]){
+                            res += letter[i];
+                            return res;
+                        }
+                i++;
             }
-            else{
-                res += letter[12];
-                num-=1000;
+        }
+            
+        else{
+            res += letter[12];
+            num-=1000;
             }
         }
         return res;
