@@ -26,10 +26,6 @@ for(int i=0;i<ransomNote.size();i++)
             magazine[j]=-1;
             break;
             }
-        if(count==ransomNote.size())
-            {
-            return true;
-            }
     }
 }
 if(count==ransomNote.size())
