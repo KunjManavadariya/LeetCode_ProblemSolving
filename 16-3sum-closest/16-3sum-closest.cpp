@@ -10,7 +10,7 @@ public:
                 if(abs(temp-target)<abs(sum-target)) sum=temp;
                 if(temp>target) k--;
                 else if(temp<target) j++;
-                else return sum;
+                else return temp;
             }
         }
         return sum;
