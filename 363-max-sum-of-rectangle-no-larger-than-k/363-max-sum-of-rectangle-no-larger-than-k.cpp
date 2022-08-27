@@ -1,38 +1,41 @@
-class Solution
-{
+class Solution {
 public:
-    int maxSumSubmatrix(vector<vector<int>> &matrix, int tar)
-    {
-        int m = matrix.size(), n = matrix[0].size();
+    int maxSumSubmatrix(vector<vector<int>>& matrix, int k) {
+        int m = matrix.size();
+        int n = matrix[0].size();
         int ans = INT_MIN;
-        vector<vector<int>> dp(m + 1, vector<int>(n, 0));
-        for (int i = 0; i < m; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                dp[i + 1][j] = dp[i][j] + matrix[i][j];
-            }
-        }
-        for (int i = 0; i < m; i++)
-        {
-            for (int l = i + 1; l <= m; l++)
-            {
-                for (int j = 0; j < n; j++)
-                {
-                    int val = 0;
-                    for (int k = j; k < n; k++)
-                    {
-                        val += dp[l][k] - dp[i][k];
-
-                        if (val < tar)
-                        {
-                            ans = max(ans, val);
-                        }
-                        else if (val == tar)
-                        {
-                            return tar;
-                        }
+        for (int left = 0; left<m; left++){
+            vector<int> col(n, 0);
+            for(int right = left; right<m; right++){
+                // Apply Kadane Algorithm
+                int best = INT_MIN;
+                int curr = 0;
+                for(int i=0; i<n; i++){
+                    col[i] += matrix[right][i];
+                    curr += col[i];
+                    if (curr == k){
+                        return k;
                     }
+                    best = max(best, curr);
+                    if (curr<0){
+                        curr = 0;
+                    }
+                }
+                if (best<k){
+                    ans = max(ans, best);
+                    continue;
+                }
+                // If not find from kadane algorithm i.e. k is less than 0
+                set<int> s;
+                s.insert(0);
+                curr = 0;
+                for(int i=0; i<n; i++){
+                    curr += col[i];
+                    auto it = s.lower_bound(curr - k);
+                    if (it != s.end()){
+                        ans = max(ans, curr-*it);
+                    }
+                    s.insert(curr);
                 }
             }
         }
