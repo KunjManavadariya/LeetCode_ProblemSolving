@@ -5,9 +5,7 @@ public:
       while(count<row){
           for(int i=1; i<row; i++){
               for(int j=1; j<col; j++){
-                  if(mat[i][j]<mat[i-1][j-1]){
-                      swap(mat[i][j], mat[i-1][j-1]);
-                  }
+                  if(mat[i][j]<mat[i-1][j-1]) swap(mat[i][j], mat[i-1][j-1]);
               }
           }
           count++;
