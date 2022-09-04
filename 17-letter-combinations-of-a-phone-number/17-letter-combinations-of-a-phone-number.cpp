@@ -20,9 +20,9 @@ public:
     }
     
     vector<string> letterCombinations(string digits) {
-        string vec[10] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         vector<string> ans;
         if(digits.length()==0) return ans;
+        string vec[10] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         string res="";
         int index=0;
         combi(digits, vec, res, index, ans);
