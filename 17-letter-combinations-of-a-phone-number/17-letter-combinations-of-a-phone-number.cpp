@@ -1,7 +1,7 @@
 class Solution {
 public:
     
-    void combi(string digits, vector<string> vec, string res, int index, vector<string> &ans){
+    void combi(string digits, string vec[], string res, int index, vector<string> &ans){
         
         //base case
         if(index>=digits.length()){
@@ -20,7 +20,7 @@ public:
     }
     
     vector<string> letterCombinations(string digits) {
-        vector<string> vec = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
+        string vec[10] = {"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
         vector<string> ans;
         string res="";
         int index=0;
