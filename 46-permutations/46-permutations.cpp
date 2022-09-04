@@ -20,8 +20,7 @@ public:
     
     vector<vector<int>> permute(vector<int>& nums) {
         vector<vector<int>> ans;
-        int index=0;
-        perm(nums, index, ans);
+        perm(nums, 0, ans);
         return ans;
     }
 };
