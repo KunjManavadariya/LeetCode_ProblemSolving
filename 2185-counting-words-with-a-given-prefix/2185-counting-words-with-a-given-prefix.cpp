@@ -5,8 +5,6 @@ public:
         bool flag=0;
         for(int i=0; i<words.size(); i++){
             words[i] = words[i].substr(0, pref.size());
-        }
-        for(int i=0; i<words.size(); i++){
             if(words[i]==pref){
                 count++;
             }
