@@ -1,12 +1,13 @@
 class Solution {
 public:
     char findTheDifference(string s, string t) {
-        int arr[26]={0};
+        int freq[26]={0};
         for(int i=0; i<s.length(); i++){
-            arr[s[i]-'a']++;
+            freq[s[i]-'a']++;
         }
         for(int i=0; i<t.length(); i++){
-            if(arr[t[i]-'a']!=0) arr[t[i]-'a']-=1;
+            int *ele = &freq[t[i]-'a'];
+            if(*ele!=0) *ele-=1;
             else return t[i];
         }
         return '0';
