@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int sum(int n){
+    long long sum(int n){
         long long res=0;
         while(n!=0){
             res+=n;
