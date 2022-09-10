@@ -8,8 +8,8 @@ public:
                 count=max(count, temp);
                 temp=0;
             }
-            if(i==nums.size()-1) count = max(count, temp);
         }
+        count=max(count, temp);
         return count;
     }
 };
