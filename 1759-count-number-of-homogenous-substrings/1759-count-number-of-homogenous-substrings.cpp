@@ -22,6 +22,6 @@ public:
         }
         temp=sum(temp);
         count+=temp;
-        return count%1000000007;
+        return count;
     }
 };
