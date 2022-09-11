@@ -1,22 +1,12 @@
 class Solution {
 public:
-    vector<string> findRelativeRanks(vector<int>& score) {
-        vector<int> temp;
-        vector<string> res;
-        temp=score;
-        int freq[1000002] = {-1};
-        sort(temp.begin(), temp.end(), greater<int>());
-        for(int i=0; i<score.size(); i++){
-            freq[temp[i]] = i;
-        }
-        for(int i=0; i<score.size(); i++){
-            if(freq[score[i]]==0) res.push_back("Gold Medal");
-            else if(freq[score[i]]==1) res.push_back("Silver Medal");
-            else if(freq[score[i]]==2) res.push_back("Bronze Medal");
-            else{
-                res.push_back(to_string(freq[score[i]]+1));
-            }
-        }
-        return res;
-    }
+    vector<string> findRelativeRanks(vector<int>& nums) {
+  vector<short> idx(nums.size());
+  vector<string> res(nums.size());
+  iota(begin(idx), end(idx), 0);
+  sort(begin(idx), end(idx), [&nums](int i, int j) { return nums[i] > nums[j]; });
+  for (auto i = 0; i < nums.size(); ++i)
+    res[idx[i]] = i == 0 ? "Gold Medal" : i == 1 ? "Silver Medal" : i == 2 ? "Bronze Medal" : to_string(i + 1);
+  return res;
+}
 };
